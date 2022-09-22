@@ -1,0 +1,23 @@
+.ant-picker-date-panel {
+  /* flex-direction: row-reverse; */
+}
+.ant-picker-panel {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.ant-picker-footer {
+  min-width: unset;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.preset-btn {
+  padding: 0;
+  width: 100%;
+  height: 26px;
+  font-size: 10px;
+}

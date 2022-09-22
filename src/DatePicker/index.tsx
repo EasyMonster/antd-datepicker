@@ -1,6 +1,7 @@
 import { Button, DatePicker, DatePickerProps, Space } from "antd";
 import moment from "moment";
 import { useState } from "react";
+import "./index.css";
 
 export type PresetData = {
   label: string;
@@ -12,6 +13,38 @@ export type AntDDatePickerProps = {
 } & DatePickerProps;
 
 export const presetDates: PresetData[] = [
+  {
+    label: "yesterday",
+    setTargetDate: (day) => day.add(-1, "day"),
+  },
+  {
+    label: "a week age",
+    setTargetDate: (day) => day.add(-1, "week"),
+  },
+  {
+    label: "yesterday",
+    setTargetDate: (day) => day.add(-1, "day"),
+  },
+  {
+    label: "a week age",
+    setTargetDate: (day) => day.add(-1, "week"),
+  },
+  {
+    label: "yesterday",
+    setTargetDate: (day) => day.add(-1, "day"),
+  },
+  {
+    label: "a week age",
+    setTargetDate: (day) => day.add(-1, "week"),
+  },
+  {
+    label: "yesterday",
+    setTargetDate: (day) => day.add(-1, "day"),
+  },
+  {
+    label: "a week age",
+    setTargetDate: (day) => day.add(-1, "week"),
+  },
   {
     label: "yesterday",
     setTargetDate: (day) => day.add(-1, "day"),
@@ -39,10 +72,12 @@ const AntDDatePicker = ({
   const _PresetDataButtons = () => {
     return (
       presetDates && (
-        <Space>
+        <div className='container'>
           {presetDates.map(({ label, setTargetDate }) => {
             return (
               <Button
+              className='preset-btn'
+                type='link'
                 onClick={() => {
                   const newDay = setTargetDate(today);
                   _onChange(newDay, newDay.toString());
@@ -51,7 +86,7 @@ const AntDDatePicker = ({
               </Button>
             );
           })}
-        </Space>
+        </div>
       )
     );
   };
@@ -62,6 +97,8 @@ const AntDDatePicker = ({
       value={value}
       onChange={_onChange}
       renderExtraFooter={_PresetDataButtons}
+      showToday={false}
+      placement={"bottomLeft"}
     />
   );
 };
