@@ -14,12 +14,8 @@ export type AntDDatePickerProps = {
 
 export const presetDates: PresetData[] = [
   {
-    label: "yesterday",
-    setTargetDate: (day) => day.add(-1, "day"),
-  },
-  {
-    label: "a week age",
-    setTargetDate: (day) => day.add(-1, "week"),
+    label: "today",
+    setTargetDate: (day) => day,
   },
   {
     label: "yesterday",
@@ -30,28 +26,16 @@ export const presetDates: PresetData[] = [
     setTargetDate: (day) => day.add(-1, "week"),
   },
   {
-    label: "yesterday",
-    setTargetDate: (day) => day.add(-1, "day"),
+    label: "30 days age",
+    setTargetDate: (day) => day.add(-30, "day"),
   },
   {
-    label: "a week age",
-    setTargetDate: (day) => day.add(-1, "week"),
+    label: "a month age",
+    setTargetDate: (day) => day.add(-1, "month"),
   },
   {
-    label: "yesterday",
-    setTargetDate: (day) => day.add(-1, "day"),
-  },
-  {
-    label: "a week age",
-    setTargetDate: (day) => day.add(-1, "week"),
-  },
-  {
-    label: "yesterday",
-    setTargetDate: (day) => day.add(-1, "day"),
-  },
-  {
-    label: "a week age",
-    setTargetDate: (day) => day.add(-1, "week"),
+    label: "a year age",
+    setTargetDate: (day) => day.add(-1, "year"),
   },
 ];
 
@@ -76,7 +60,7 @@ const AntDDatePicker = ({
           {presetDates.map(({ label, setTargetDate }) => {
             return (
               <Button
-              className='preset-btn'
+                className='preset-btn'
                 type='link'
                 onClick={() => {
                   const newDay = setTargetDate(today);
