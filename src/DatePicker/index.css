@@ -7,6 +7,8 @@
 }
 
 .ant-picker-footer {
+  height: 269px;
+  overflow: overlay;
   min-width: unset;
 }
 
