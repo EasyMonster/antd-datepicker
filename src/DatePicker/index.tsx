@@ -39,7 +39,7 @@ export const presetDates: PresetData[] = [
   },
 ];
 
-const AntDDatePicker = ({
+export const AntDDatePicker = ({
   presetDates,
   onChange,
   ...restProps
@@ -86,5 +86,3 @@ const AntDDatePicker = ({
     />
   );
 };
-
-export default AntDDatePicker;

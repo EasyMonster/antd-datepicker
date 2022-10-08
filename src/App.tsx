@@ -1,6 +1,6 @@
 import "./App.css";
 import "antd/dist/antd.css";
-import AntDDatePicker, { presetDates } from "./DatePicker";
+import { AntDDatePicker, presetDates } from "./DatePicker";
 
 function App() {
   return (
