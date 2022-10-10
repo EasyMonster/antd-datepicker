@@ -14,28 +14,56 @@ export type AntDDatePickerProps = {
 
 export const presetDates: PresetData[] = [
   {
-    label: "today",
+    label: "Today",
     setTargetDate: (day) => day,
   },
   {
-    label: "yesterday",
+    label: "Tomorrow",
     setTargetDate: (day) => day.add(-1, "day"),
   },
   {
-    label: "a week age",
+    label: "Yesterday",
+    setTargetDate: (day) => day.add(-1, "day"),
+  },
+  {
+    label: "A week age",
     setTargetDate: (day) => day.add(-1, "week"),
   },
   {
-    label: "30 days age",
-    setTargetDate: (day) => day.add(-30, "day"),
-  },
-  {
-    label: "a month age",
+    label: "A month age",
     setTargetDate: (day) => day.add(-1, "month"),
   },
   {
-    label: "a year age",
+    label: "Three month age",
+    setTargetDate: (day) => day.add(-3, "month"),
+  },
+  {
+    label: "Six month age",
+    setTargetDate: (day) => day.add(-6, "month"),
+  },
+  {
+    label: "A year age",
     setTargetDate: (day) => day.add(-1, "year"),
+  },
+  {
+    label: "A week later",
+    setTargetDate: (day) => day.add(1, "week"),
+  },
+  {
+    label: "A month later",
+    setTargetDate: (day) => day.add(1, "month"),
+  },
+  {
+    label: "Three month later",
+    setTargetDate: (day) => day.add(3, "month"),
+  },
+  {
+    label: "Six month later",
+    setTargetDate: (day) => day.add(6, "month"),
+  },
+  {
+    label: "A year later",
+    setTargetDate: (day) => day.add(1, "year"),
   },
 ];
 
