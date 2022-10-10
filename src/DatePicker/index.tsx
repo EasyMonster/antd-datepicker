@@ -12,7 +12,7 @@ export type AntDDatePickerProps = {
   presetDates?: PresetData[]; // 预设的日期
 } & DatePickerProps;
 
-export const presetDates: PresetData[] = [
+const _presetDates: PresetData[] = [
   {
     label: "Today",
     setTargetDate: (day) => day,
@@ -67,8 +67,10 @@ export const presetDates: PresetData[] = [
   },
 ];
 
+export const presetDates = _presetDates;
+
 export const AntDDatePicker = ({
-  presetDates,
+  presetDates = _presetDates,
   onChange,
   ...restProps
 }: AntDDatePickerProps) => {
