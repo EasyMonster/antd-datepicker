@@ -3,16 +3,16 @@ import moment from "moment";
 import { useState } from "react";
 import "./index.css";
 
-export type PresetData = {
+export type PresetDate = {
   label: string;
   setTargetDate: (d: moment.Moment) => moment.Moment;
 };
 
 export type AntDDatePickerProps = {
-  presetDates?: PresetData[]; // 预设的日期
+  presetDates?: PresetDate[]; // 预设的日期
 } & DatePickerProps;
 
-const _presetDates: PresetData[] = [
+export const _presetDates: PresetDate[] = [
   {
     label: "Today",
     setTargetDate: (day) => day,
@@ -67,7 +67,7 @@ const _presetDates: PresetData[] = [
   },
 ];
 
-export const presetDates = _presetDates;
+export const presetDates = [..._presetDates];
 
 export const AntDDatePicker = ({
   presetDates = _presetDates,
@@ -83,7 +83,7 @@ export const AntDDatePicker = ({
     onChange && onChange(v, s);
   };
 
-  const _PresetDataButtons = () => {
+  const _PresetDateButtons = () => {
     return (
       presetDates && (
         <div className='container'>
@@ -106,13 +106,16 @@ export const AntDDatePicker = ({
   };
 
   return (
-    <DatePicker
-      {...restProps}
-      value={value}
-      onChange={_onChange}
-      renderExtraFooter={_PresetDataButtons}
-      showToday={false}
-      placement={"bottomLeft"}
-    />
+    <div>
+      <DatePicker
+        {...restProps}
+        popupClassName='antd-datepicker-popup-container'
+        value={value}
+        onChange={_onChange}
+        renderExtraFooter={_PresetDateButtons}
+        showToday={false}
+        placement={"bottomLeft"}
+      />
+    </div>
   );
 };

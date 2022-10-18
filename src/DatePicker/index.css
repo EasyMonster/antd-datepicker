@@ -1,23 +1,23 @@
-.ant-picker-date-panel {
+.antd-datepicker-popup-container .ant-picker-date-panel {
   /* flex-direction: row-reverse; */
 }
-.ant-picker-panel {
+.antd-datepicker-popup-container .ant-picker-panel {
   display: flex;
   flex-direction: row-reverse;
 }
 
-.ant-picker-footer {
+.antd-datepicker-popup-container .ant-picker-footer {
   height: 269px;
   overflow: overlay;
   min-width: unset;
 }
 
-.container {
+.antd-datepicker-popup-container .container {
   display: flex;
   flex-direction: column;
 }
 
-.preset-btn {
+.antd-datepicker-popup-container .preset-btn {
   padding: 0;
   width: 100%;
   height: 26px;
