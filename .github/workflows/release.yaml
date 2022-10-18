@@ -17,7 +17,7 @@ jobs:
     # 设置变量
     strategy:
       matrix:
-        node-version: [12.x]
+        node-version: [16.x]
     steps:
       # 检查并切换到main分支
       - name: 检查main分支
@@ -37,7 +37,6 @@ jobs:
         id: version
         uses: ashley-taylor/read-json-property-action@v1.0
         with:
-          # 读取dist/package.json的，而不是根路径下的package.json
           path: ./package.json
           property: version
 
