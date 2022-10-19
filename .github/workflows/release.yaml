@@ -48,7 +48,7 @@ jobs:
           npm publish
         env:
           # 配置 npm access token 环境变量
-          NPM_TOKEN: ${{secrets.NPM_ACCESS_TOKEN}}
+          NPM_TOKEN: ${{secrets.NPM_TOKEN}}
 
       # 创建GitHub Release
       - name: 创建GitHub Release
