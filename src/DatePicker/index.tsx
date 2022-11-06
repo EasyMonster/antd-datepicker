@@ -74,28 +74,20 @@ export const AntDDatePicker = ({
   onChange,
   ...restProps
 }: AntDDatePickerProps) => {
-  const today = moment(new Date());
-  const [value, setValue] = useState(moment(today));
-
-  const _onChange: AntDDatePickerProps["onChange"] = (v, s) => {
-    if (v === null) return;
-    setValue(moment(v));
-    onChange && onChange(v, s);
-  };
-
   const _PresetDateButtons = () => {
     return (
       presetDates && (
-        <div className='container'>
+        <div className="container">
           {presetDates.map(({ label, setTargetDate }) => {
             return (
               <Button
-                className='preset-btn'
-                type='link'
+                className="preset-btn"
+                type="link"
                 onClick={() => {
-                  const newDay = setTargetDate(today);
-                  _onChange(newDay, newDay.toString());
-                }}>
+                  const newDay = setTargetDate(moment(new Date()));
+                  onChange(newDay, newDay.toString());
+                }}
+              >
                 {label}
               </Button>
             );
@@ -108,13 +100,12 @@ export const AntDDatePicker = ({
   return (
     <div>
       <DatePicker
+        placement="bottomLeft"
         {...restProps}
-        popupClassName='antd-datepicker-popup-container'
-        value={value}
-        onChange={_onChange}
+        popupClassName="antd-datepicker-popup-container"
+        onChange={onChange}
         renderExtraFooter={_PresetDateButtons}
         showToday={false}
-        placement={"bottomLeft"}
       />
     </div>
   );
