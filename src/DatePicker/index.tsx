@@ -26,23 +26,23 @@ export const _presetDates: PresetDate[] = [
     setTargetDate: (day) => day.add(-1, "day"),
   },
   {
-    label: "A week age",
+    label: "A week ago",
     setTargetDate: (day) => day.add(-1, "week"),
   },
   {
-    label: "A month age",
+    label: "A month ago",
     setTargetDate: (day) => day.add(-1, "month"),
   },
   {
-    label: "Three month age",
+    label: "Three months ago",
     setTargetDate: (day) => day.add(-3, "month"),
   },
   {
-    label: "Six month age",
+    label: "Six months ago",
     setTargetDate: (day) => day.add(-6, "month"),
   },
   {
-    label: "A year age",
+    label: "A year ago",
     setTargetDate: (day) => day.add(-1, "year"),
   },
   {
@@ -54,11 +54,11 @@ export const _presetDates: PresetDate[] = [
     setTargetDate: (day) => day.add(1, "month"),
   },
   {
-    label: "Three month later",
+    label: "Three months later",
     setTargetDate: (day) => day.add(3, "month"),
   },
   {
-    label: "Six month later",
+    label: "Six months later",
     setTargetDate: (day) => day.add(6, "month"),
   },
   {
